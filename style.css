@@ -1,0 +1,172 @@
+*{
+  margin: 0%;/*remove todas as margens*/
+  padding: 0%; /*remove o espaço entre o conteudo e a borda*/
+  box-sizing: border-box; /*faz manter os 580px da largura max*/
+}
+ul{
+  list-style: none; /*remove os posto colocados quando foi listado*/
+}
+
+body {
+  background-image:url(./assets/Fundo.jpg); /*imagem do fundo*/
+  background-position: top center; /*posição da imagem do fundo*/
+  background-size: 100% auto; /*largura no tamanho da tela*/
+  background-repeat: no-repeat; /*n repetir a imagem do fundo*/
+  background-color: #121214; /*cor utilizada abaixo da imagem de fundo*/
+}
+
+body * {
+font-family: 'inter', sans-serif; /* body* {} pega todas os elementos do body*/ /*as fonte usada na pagina*/
+line-height: 160%; /*altura da linha*/
+}
+
+header {
+  padding-top: 32px;
+  height: calc(120px + 32px);/*funcao que o css faz o calculo*/
+
+}
+
+header div {
+  width: 120px;
+  margin: auto;
+  background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+  
+  border-radius: 50px;
+
+  display: flex;
+  padding: 4px;
+
+  transition: trasform .3s;/*faz com que o pulsacao seja mais lenta*/
+}
+header div:hover {
+  transform: scale(1.1); /*quando passa o mouse em cima da foto do top e ela pula*/
+}
+
+
+header div img {
+width: 100%;
+border-radius: 50%;
+
+}
+
+
+main * {
+  /*border: 1px solid red;*/  /*mostra todas as divisões da pagina*/ 
+}
+
+main{
+  max-width: 580px; /*largura max*/
+  width: 90%; /*largura da tela*/
+  margin: 32px auto; /*32px é o espaço da imagem do top p o primeiro quadrado e o auto continua sendo das laterais*/
+
+  display: grid; 
+  gap: 24px; /*largura entre as imagens */
+
+  margin-top: 32px;
+}
+
+section{
+  color: white;
+
+  background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+  padding-top: 4px;
+  border-radius: 10px;
+}
+
+section div {
+  background-color: #2A2634;
+  padding: 32px;
+  padding-top: 24px;
+  border-radius: 8px;
+ }
+
+section h2 {
+  letter-spacing: -0.47px; /*espaço entre as letras*/
+
+/*font-weight: 900;/*peso da letra*/ /*ja esta sendo usado*/
+/*font-size: 24px; /*tamanho da letra*/ /*ja esta sendo usado*/
+}
+
+section p{
+  letter-spacing: -0.18px;/*espaço entre as letras*/
+  color: #A1A1AA;
+
+/*font-family: 'Inter';*/
+/*font-style: normal;*/
+/*font-weight: 400; /*peso da letra /*navegador ja usa o mesmo*/
+/*font-size: 16px; /*tamanho da letra*/ /*navegador ja usa o mesmo*/
+/*line-height: 160%; /*tamanho da letra*/ /*ja esta sendo usado*/
+/* identical to box height, or 26px */
+}
+
+section ul {
+  display: flex; /*tem a ver com a visualização das caixas uma em cima da outra ou lateral*/
+  flex-wrap: wrap; /*caso tenha mais imagens ele faz o ajuste p baixo e ja ficam alinhados*/
+  gap: 16px; /*largura entre as imagens */
+  margin-top: 24px; /*altura das imagens*/
+}
+
+section ul li {
+  transition: transform .3s; /*faz com que o pulsacao seja mais lenta*/
+}
+
+section ul li:hover {
+  transform: scale(1.1);/*quando passa o mouse em cima das listas e ela pula*/
+}
+
+
+.games-list img {
+  width: 90px; /*largura da imagem*/
+  border-radius: 8px;/*bordas das imagens*/
+}
+
+.channel-list img {
+  border-radius: 50%;/*bordas das imagens*/
+  width: 70px; /*largura da imagem*/
+  border: 1px solid #443E54;
+}
+
+/*animation*/
+header div {
+  animation: fromTop .7s .4s backwards; /*tempo para a imagem descer*/
+  /*backwards, faz a junção da função @keyframes fromTop*/
+}
+
+main section {
+  animation: fromBotton .7s backwards;
+}
+
+main section:nth-child(1) {
+  animation-delay: 0;
+}
+
+main section:nth-child(2) {
+  animation-delay: .3s;
+}
+
+main section:nth-child(3) {
+  animation-delay: .6s;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px)/*joga 30px pra cima*/
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) /* 0 é posição atual*/
+  }
+
+}
+
+@keyframes fromBotton {
+  from {
+    opacity: 0;
+    transform: translateY(30px)/*joga 30px para baixo*/
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) /* 0 é posição atual*/
+  }
+}
